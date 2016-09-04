@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Unhide-->
+        <!--Unhidden View Controller-->
         <scene sceneID="kUU-3v-Go9">
             <objects>
                 <viewController id="5Io-bP-un2" customClass="UnhiddenViewController" customModule="Hidden" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Unhide" id="JGf-B6-KtW"/>
+                    <navigationItem key="navigationItem" id="1fy-kM-bgR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DrS-EK-Lhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="460"/>
+            <point key="canvasLocation" x="1915" y="456"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="pdP-4a-n36">
@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gmg-Zl-UfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2605" y="-361"/>
+            <point key="canvasLocation" x="2747" y="-361"/>
         </scene>
         <!--HiddenViewController-->
         <scene sceneID="OBC-7I-nvr">
@@ -124,12 +124,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="Kma-Hu-Gc4" kind="relationship" relationship="viewControllers" id="ZRI-LD-uVw"/>
-                        <segue destination="5Io-bP-un2" kind="relationship" relationship="viewControllers" id="2oi-CT-BDL"/>
+                        <segue destination="u31-oh-aYC" kind="relationship" relationship="viewControllers" id="2oi-CT-BDL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J08-YH-9bv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-115" y="130"/>
+            <point key="canvasLocation" x="97" y="40"/>
         </scene>
         <!--Hide-->
         <scene sceneID="QBT-Dx-AqP">
@@ -150,6 +150,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="379-hS-YCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1045" y="-361"/>
+        </scene>
+        <!--Unhide-->
+        <scene sceneID="zyJ-dW-ZG4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u31-oh-aYC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Unhide" id="JGf-B6-KtW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZbY-xF-Vpa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Io-bP-un2" kind="relationship" relationship="rootViewController" id="0a1-xo-kvQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewT-eP-YqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045" y="456"/>
         </scene>
     </scenes>
 </document>

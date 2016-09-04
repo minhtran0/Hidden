@@ -17,6 +17,7 @@
 		C183A6CD1D79F32400702358 /* HiddenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183A6CC1D79F32400702358 /* HiddenUITests.swift */; };
 		C183A6DC1D79F41900702358 /* HiddenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183A6DB1D79F41900702358 /* HiddenViewController.swift */; };
 		C183A6DE1D79F44F00702358 /* UnhiddenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183A6DD1D79F44F00702358 /* UnhiddenViewController.swift */; };
+		C1F957FC1D7C7DC0009B4E98 /* EncryptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F957FB1D7C7DC0009B4E98 /* EncryptionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C183A6CE1D79F32400702358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C183A6DB1D79F41900702358 /* HiddenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenViewController.swift; sourceTree = "<group>"; };
 		C183A6DD1D79F44F00702358 /* UnhiddenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnhiddenViewController.swift; sourceTree = "<group>"; };
+		C1F957FB1D7C7DC0009B4E98 /* EncryptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				C183A6B01D79F32400702358 /* Main.storyboard */,
 				C183A6DB1D79F41900702358 /* HiddenViewController.swift */,
 				C12C629F1D7B32EE0040BFD7 /* ImageViewController.swift */,
+				C1F957FB1D7C7DC0009B4E98 /* EncryptionManager.swift */,
 				C183A6DD1D79F44F00702358 /* UnhiddenViewController.swift */,
 			);
 			path = Hidden;
@@ -275,6 +278,7 @@
 			files = (
 				C183A6AF1D79F32400702358 /* ViewController.swift in Sources */,
 				C183A6DE1D79F44F00702358 /* UnhiddenViewController.swift in Sources */,
+				C1F957FC1D7C7DC0009B4E98 /* EncryptionManager.swift in Sources */,
 				C12C62A01D7B32EE0040BFD7 /* ImageViewController.swift in Sources */,
 				C183A6AD1D79F32400702358 /* AppDelegate.swift in Sources */,
 				C183A6DC1D79F41900702358 /* HiddenViewController.swift in Sources */,

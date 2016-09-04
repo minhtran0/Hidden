@@ -22,7 +22,27 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .PhotoLibrary
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        let url = NSURL(string: "http://i.imgur.com/YhqRo.png")
+        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+        imagePicked.image = UIImage(data: data!)
+        startEncryption()
+        
+        //presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func startEncryption() {
+        if let textToEncrypt = text {
+            if let image = imagePicked.image {
+                let manager = EncryptionManager(image: image, textToEncrypt: textToEncrypt)
+                if manager.encrypt() {
+                    // Print out success message
+                }
+                else {
+                    // Print out error
+                }
+            }
+        }
+        
     }
     
     // MARK: - UIImagePickerController
@@ -30,6 +50,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imagePicked.contentMode = .ScaleAspectFit
         imagePicked.image = image
+        startEncryption()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
