@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UIImagePickerControllerDelegate {
+class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var text: String?
     
@@ -18,17 +18,19 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = false
         imagePicker.sourceType = .PhotoLibrary
         
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imagePicked.contentMode = .ScaleAspectFit
-            imagePicked.image = pickedImage
-        }
+    // MARK: - UIImagePickerController
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        imagePicked.contentMode = .ScaleAspectFit
+        imagePicked.image = image
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

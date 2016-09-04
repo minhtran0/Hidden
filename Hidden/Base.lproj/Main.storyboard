@@ -41,7 +41,7 @@
                                 <rect key="frame" x="20" y="132" width="560" height="336"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gP0-6n-tiL" firstAttribute="top" secondItem="l3P-8V-5xh" secondAttribute="bottom" constant="68" id="T6W-pT-4ce"/>
                             <constraint firstItem="gP0-6n-tiL" firstAttribute="trailing" secondItem="zgx-Zn-kmK" secondAttribute="trailingMargin" id="npl-X0-Yj1"/>
