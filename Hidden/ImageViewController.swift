@@ -25,6 +25,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let url = NSURL(string: "http://i.imgur.com/YhqRo.png")
         let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
         imagePicked.image = UIImage(data: data!)
+        
         startEncryption()
         
         //presentViewController(imagePicker, animated: true, completion: nil)
@@ -34,11 +35,17 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if let textToEncrypt = text {
             if let image = imagePicked.image {
                 let manager = EncryptionManager(image: image, textToEncrypt: textToEncrypt)
-                if manager.encrypt() {
-                    // Print out success message
-                }
-                else {
-                    // Print out error
+                
+                dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+                    let encrypt_result = manager.encrypt()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        if encrypt_result {
+                            // Print out success message
+                        }
+                        else {
+                            // Print out error
+                        }
+                    }
                 }
             }
         }

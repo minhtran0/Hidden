@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class EncryptionManager {
-    private var image: UIImage
+    private var image: UIImage?
     private var textToEncrypt: String?
     
     init(image: UIImage, textToEncrypt: String) {
@@ -23,12 +23,13 @@ class EncryptionManager {
     
     func encrypt() -> Bool {
         
+        return true
     }
     func getPixelArray() {
-        if let image = myImageView.image {
-    
-            var pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage))
-            var data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+        if let image = self.image {
+            
+            let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage))
+            let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
             
             let height = Int(image.size.height)
             let width = Int(image.size.width)
@@ -36,18 +37,19 @@ class EncryptionManager {
             var yArry = [[Int]](count:width, repeatedValue: zArry)
             var xArry = [[[Int]]](count:height, repeatedValue: yArry)
             
-            for (var h = 0; h < height; h++) {
-                for (var w = 0; w < width; w++) {
-                    var pixelInfo: Int = ((Int(image.size.width) * Int(h)) + Int(w)) * 4
+            for (var h = 0; h < height; h += 1) {
+                for (var w = 0; w < width; w += 1) {
+                    var pixelInfo: Int = ((Int(width) * Int(h)) + Int(w)) * 4
                     var rgb = 0
                     xArry[h][w][rgb] = Int(data[pixelInfo])
-                    rgb++
+                    rgb += 1
                     xArry[h][w][rgb] = Int(data[pixelInfo+1])
-                    rgb++
+                    rgb += 1
                     xArry[h][w][rgb] = Int(data[pixelInfo+2])
                 }
             }
-            println(xArry[20][20][1])
+            print(xArry[20][20][1])
         }
     }
+
 }
